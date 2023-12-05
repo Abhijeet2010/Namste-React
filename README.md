@@ -16,3 +16,15 @@
 - Error Handling
 - Diagnostics
 - HTTPs
+
+# Babel (Transpiler)
+
+- converts JSX into React Element
+- Some Older version Browser does not know about ES6 so its Babel job to convert it such format that each browser can easily understand.
+-
+
+# JSX (Javascript Syntax)
+
+- JSX (JSX Transpile the code before it reaches to js) -> Parcel -> Babel
+- JSX is not a HTML. It is Like a HTML Syntax.
+- JSX => Babel transpile it into React.createElement => its an React Element => at the end it is JS Object => HTML-Element(render)
