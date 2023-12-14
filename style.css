@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+.app {
+  position: relative;
+}
+
+/* Header Component */
+.header {
+  height: 80px;
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+
+  padding: 0 80px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo img {
+  height: 60px;
+  object-fit: cover;
+}
+
+.header_navLinks a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+li {
+  list-style-type: none;
+}
+a:hover {
+  color: orange;
+}
+
+/* SearchBar */
+.searchbar input {
+  padding: 10px;
+  font-size: 15px;
+  width: 300;
+
+  outline: none;
+}
+.searchbar button {
+  margin: 0 10px;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+}
