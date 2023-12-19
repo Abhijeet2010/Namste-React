@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../public/swiggy.webp";
+import Logo from "../../public/swiggy.webp";
 import { Link } from "react-router-dom";
 
 const Header = () => {

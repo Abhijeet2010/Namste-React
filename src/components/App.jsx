@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import "../style.css";
+import "../../public/style.css";
 import BodyContainer from "./BodyContainer";
 
 {

@@ -56,3 +56,37 @@
 - every key must be uniquely identify.
 - its optimize our app.
 - react official docs says dont use index as key, its not recommended.
+
+# React Hook - Normal JS Utility Function
+
+# 1. UseState Hook.
+
+- It not a normal js variable, it has superpower of local react state variable.
+- It Sync with UI layer and Data layer.
+- when ever data changes the ui will automatically changes with the help useState Hook.
+-
+
+# Reconcialiation Algo (React Fiber)
+
+- It introduce in React version 16.
+- When ever something changes on UI it is because of reconciliation process.
+- Difference is finded by Diff Algorithm, and that difference is updated by Reconcilation.
+- Focuses on updating the real DOM efficiently based on the changes identified during the diffing phase, enhancing rendering speed.
+
+# Diff Algorithm
+
+- it keep track of all react node.
+- it will find the difference between actual dom and virtual dom.
+- Determines the difference between previous and new states.
+- Provides a list of changes or operations to be applied
+- it is written in c++
+
+# Virtual Dom
+
+- Virtual dom is respresentation of actual dom.
+- it is present in Object
+- whenever ui changes it will find the difference between 2 virtual dom then update the actual dom.
+- this process is very superfast.
+- virtual dom is 3 times faster than actual dom.
+- Diff Algorithm and Reconciliation is part of Virtual Dom.
+- React finds the difference between virtual dom efficiently and update the actual dom thats why React Fast.

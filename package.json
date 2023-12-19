@@ -4,7 +4,7 @@
   "description": "React Course by Akshay Saini",
   "main": "App.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel public/index.html",
     "test": "jest"
   },
   "author": "Abhijeet Raut",
