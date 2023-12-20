@@ -64,7 +64,8 @@
 - It not a normal js variable, it has superpower of local react state variable.
 - It Sync with UI layer and Data layer.
 - when ever data changes the ui will automatically changes with the help useState Hook.
--
+- const [data, setData] = useState(value); ----syntax
+- because of useState hook virtual dom can identified the differernce between current state and previous state woth help of setterFunction.
 
 # Reconcialiation Algo (React Fiber)
 
