@@ -91,3 +91,29 @@
 - virtual dom is 3 times faster than actual dom.
 - Diff Algorithm and Reconciliation is part of Virtual Dom.
 - React finds the difference between virtual dom efficiently and update the actual dom thats why React Fast.
+
+# React Concept Follow ->
+
+1. Loads the Page.
+2. Render the page whatever Skelleton (static or dummy) present their.
+3. After successfull page load it makes Api call.
+4. on sucessfull api call response it will render the data on webpage.
+5. It gives better ux.
+6. Here React Render 2 times, but its not issue because its render cycle is superfast.
+   1. When 1st time page loads.
+   2. On API call or state changes or data changes.
+
+# useEffect Hook
+
+- useEffect Hook is just a normal javascript function.
+- It takes 2 arguments ->
+  1. callback function ()=>{},
+  2. dependency array []
+- syntax -> useEffect(()=>{},[])
+
+- when component renders after that useEffect called.
+
+- Basically, when 1st time render cycle completed its rendering task, then it will call callback function inside of useffect and do task which present inside of callback function.
+
+- mostly useffect is use while calling api.
+- if we get cors error during api call then its an browser part that our browser not allow us. we have to use cors extension download.
