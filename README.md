@@ -68,6 +68,7 @@
 - because of useState hook virtual dom can track of the differernce between current state and previous state woth help of setterFunction.
 - if we use normal js variable then react can not keep track of that variable, so data will update but ui will not change..
 - useState has local state variable which is only update by setter function which will react can track..and it will help react to update state or data.
+- thats the main reason we need useState variable. thats the main reason normal js variable not working in react while updating UI.
 - when ever there update in state, react will re-render that whole component and only update that perticular node. this process also knwon as Reconciliation.
 
 # Reconcialiation Algo (React Fiber)

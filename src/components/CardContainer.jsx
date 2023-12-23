@@ -7,6 +7,8 @@ const CardContainer = () => {
 
   const [listedData, setListedData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchtext, setSearchText] = useState("");
+  const [filter, setFilter] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -24,6 +26,11 @@ const CardContainer = () => {
           ?.restaurants
       );
 
+      setFilter(
+        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+
       setLoading(false);
     } catch (error) {
       console.log(error.message);
@@ -33,21 +40,44 @@ const CardContainer = () => {
 
   const handleClick = () => {
     const filterdata = listedData?.filter((res) => {
-      console.log(res.info.avgRating > 4.2);
+      console.log(res);
       return res.info.avgRating > 4.2;
     });
 
     setListedData(filterdata);
   };
 
+  const handleSearch = () => {
+    const searchFilterData = listedData.filter(
+      (res) =>
+        res.info.name.toLowerCase().includes(searchtext.toLowerCase()) ||
+        res.info.cuisines
+          .join(" ")
+          .toLowerCase()
+          .includes(searchtext.toLowerCase()) ||
+        res.info.locality.toLowerCase().includes(searchtext.toLowerCase()) ||
+        console.log(res.info.cuisines.join(" ").toLowerCase())
+    );
+    setFilter(searchFilterData);
+  };
+
   return (
     <>
-      <button onClick={() => handleClick()}>Data</button>
+      <div>
+        <div>
+          <input
+            value={searchtext}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button onClick={() => handleSearch()}>Search</button>
+        </div>
+        <button onClick={() => handleClick()}>Data</button>
+      </div>
       <div className="cardContainer">
         {loading ? (
           <Shimmer count={20} />
         ) : (
-          listedData?.map((resData) => {
+          filter?.map((resData) => {
             return <Card key={resData.info.id} resName={resData} />;
           })
         )}

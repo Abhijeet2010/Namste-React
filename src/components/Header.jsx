@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import Logo from "../../public/swiggy.webp";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [toggleLogin, setToggleLogin] = useState(true);
   const navLinks = [
     {
       id: 1,
@@ -21,16 +22,6 @@ const Header = () => {
     },
     {
       id: 4,
-      url: "/register",
-      title: "Register",
-    },
-    {
-      id: 5,
-      url: "/login",
-      title: "Login",
-    },
-    {
-      id: 6,
       url: "/cart",
       title: "Cart",
     },
@@ -44,12 +35,15 @@ const Header = () => {
       <div className="header_navLinks">
         <ul>
           <li>
-            {" "}
             {navLinks.map((link) => (
               <Link key={link.id} to={link.url}>
                 {link.title}
               </Link>
             ))}
+
+            <Link onClick={() => setToggleLogin((prev) => !prev)}>
+              {toggleLogin ? "Login" : "Register"}
+            </Link>
           </li>
         </ul>
       </div>
