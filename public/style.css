@@ -101,3 +101,31 @@ a:hover {
 .bodyContainer_filter {
   display: flex;
 }
+
+/* Shimmer UI  */
+
+.shimmer_card {
+  display: flex;
+  flex-direction: column;
+}
+
+.shimmer_card_img {
+  height: 200px;
+  width: 300px;
+  background-color: lightgray;
+  border-radius: 20px;
+}
+
+.shimmer_card_text h4 {
+  width: 170px;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 30px;
+}
+
+.shimmer_card_delivery_time {
+  width: 130px;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 30px;
+}

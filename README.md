@@ -65,7 +65,10 @@
 - It Sync with UI layer and Data layer.
 - when ever data changes the ui will automatically changes with the help useState Hook.
 - const [data, setData] = useState(value); ----syntax
-- because of useState hook virtual dom can identified the differernce between current state and previous state woth help of setterFunction.
+- because of useState hook virtual dom can track of the differernce between current state and previous state woth help of setterFunction.
+- if we use normal js variable then react can not keep track of that variable, so data will update but ui will not change..
+- useState has local state variable which is only update by setter function which will react can track..and it will help react to update state or data.
+- when ever there update in state, react will re-render that whole component and only update that perticular node. this process also knwon as Reconciliation.
 
 # Reconcialiation Algo (React Fiber)
 
@@ -73,6 +76,7 @@
 - When ever something changes on UI it is because of reconciliation process.
 - Difference is finded by Diff Algorithm, and that difference is updated by Reconcilation.
 - Focuses on updating the real DOM efficiently based on the changes identified during the diffing phase, enhancing rendering speed.
+- when ever there update update in state, react will re-render that whole component and only update that perticular node. this process also knwon as Reconciliation.
 
 # Diff Algorithm
 
