@@ -7,21 +7,26 @@ const Header = () => {
   const navLinks = [
     {
       id: 1,
+      url: "/about",
+      title: "About",
+    },
+    {
+      id: 2,
       url: "/search",
       title: "Search",
     },
     {
-      id: 2,
+      id: 3,
       url: "/offers",
       title: "Offers  ",
     },
     {
-      id: 3,
+      id: 4,
       url: "/help",
       title: "Help",
     },
     {
-      id: 4,
+      id: 5,
       url: "/cart",
       title: "Cart",
     },

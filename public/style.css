@@ -129,3 +129,49 @@ a:hover {
   background-color: lightgray;
   border-radius: 30px;
 }
+
+/* Error Page  */
+/* Error.css */
+
+/* Error.css */
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.error-content {
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  max-width: 400px;
+  width: 90%;
+}
+
+.error-content h2 {
+  color: #ff4757;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.error-content span {
+  font-weight: bold;
+}
+
+.error-content p {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Styling for the span element within p */
+.error-content p span {
+  color: #ff4757;
+  font-weight: bold;
+}

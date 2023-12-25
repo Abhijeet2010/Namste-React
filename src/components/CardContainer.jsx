@@ -20,15 +20,14 @@ const CardContainer = () => {
     try {
       const response = await fetch(API_URL);
       const jsonData = await response.json();
+      console.log(jsonData.data.cards[2].card.card.gridElements.infoWithStyle);
 
       setListedData(
-        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
+        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setFilter(
-        jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
+        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setLoading(false);
@@ -40,7 +39,6 @@ const CardContainer = () => {
 
   const handleClick = () => {
     const filterdata = listedData?.filter((res) => {
-      console.log(res);
       return res.info.avgRating > 4.2;
     });
 
@@ -55,8 +53,7 @@ const CardContainer = () => {
           .join(" ")
           .toLowerCase()
           .includes(searchtext.toLowerCase()) ||
-        res.info.locality.toLowerCase().includes(searchtext.toLowerCase()) ||
-        console.log(res.info.cuisines.join(" ").toLowerCase())
+        res.info.locality.toLowerCase().includes(searchtext.toLowerCase())
     );
     setFilter(searchFilterData);
   };
@@ -67,7 +64,9 @@ const CardContainer = () => {
         <div>
           <input
             value={searchtext}
-            onChange={(e) => setSearchText(e.target.value)}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
           />
           <button onClick={() => handleSearch()}>Search</button>
         </div>

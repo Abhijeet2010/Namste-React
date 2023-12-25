@@ -117,6 +117,8 @@
 - syntax -> useEffect(()=>{},[])
 
 - when component renders after that useEffect called.
+- if dependancy array is empty [] then useEffect is called on 1st render component. then it not called.
+- if dependancy array has [data] dependancy then it will called when ever that dependancy has change, useEffect will called everytime.
 
 - Basically, when 1st time render cycle completed its rendering task, then it will call callback function inside of useffect and do task which present inside of callback function.
 
