@@ -124,3 +124,15 @@
 
 - mostly useffect is use while calling api.
 - if we get cors error during api call then its an browser part that our browser not allow us. we have to use cors extension download.
+
+# Routing
+
+- There are 2 types of routing.
+
+1. Client Side Routing
+
+- it does not make any network call. on 1st time download the content and when do routing then only load that component.(SPA)
+
+2. Server Side Routing
+
+- It do Network call from Server. when user want index.html it make network call and get that page from server and show it on webpage.

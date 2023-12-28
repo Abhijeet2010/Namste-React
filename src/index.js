@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./pages/About";
 import BodyContainer from "./components/BodyContainer";
 import Error from "./pages/Error";
+import SingleRestraurant from "./pages/SingleRestraurant";
 
 const Approuter = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const Approuter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/res/:id",
+        element: <SingleRestraurant />,
       },
     ],
   },

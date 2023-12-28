@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const CardContainer = () => {
   // Imgurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ + cloudinaryImageId"
@@ -20,14 +21,13 @@ const CardContainer = () => {
     try {
       const response = await fetch(API_URL);
       const jsonData = await response.json();
-      console.log(jsonData.data.cards[2].card.card.gridElements.infoWithStyle);
 
       setListedData(
-        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setFilter(
-        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setLoading(false);
@@ -77,7 +77,11 @@ const CardContainer = () => {
           <Shimmer count={20} />
         ) : (
           filter?.map((resData) => {
-            return <Card key={resData.info.id} resName={resData} />;
+            return (
+              <Link key={resData.info.id} to={"/res/" + resData.info.id}>
+                <Card resName={resData} />
+              </Link>
+            );
           })
         )}
       </div>
