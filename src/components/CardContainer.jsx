@@ -7,15 +7,12 @@ const CardContainer = () => {
   // Imgurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ + cloudinaryImageId"
 
   const [listedData, setListedData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [searchtext, setSearchText] = useState("");
   const [filter, setFilter] = useState([]);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   const fetchData = async () => {
+    setLoading(true);
     const API_URL =
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.667347&lng=73.8071448&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     try {
@@ -36,6 +33,10 @@ const CardContainer = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleClick = () => {
     const filterdata = listedData?.filter((res) => {
@@ -72,7 +73,7 @@ const CardContainer = () => {
         </div>
         <button onClick={() => handleClick()}>Data</button>
       </div>
-      <div className="cardContainer">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-[90%] mx-auto">
         {loading ? (
           <Shimmer count={20} />
         ) : (

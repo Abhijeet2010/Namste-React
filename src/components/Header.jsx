@@ -32,16 +32,20 @@ const Header = () => {
     },
   ];
   return (
-    <div className="header">
-      <div className="header_logo">
-        <img src={Logo} alt="logo" />
+    <div className=" flex justify-between items-center px-20 h-24 ">
+      <div className="w-20">
+        <img className="object-cover" src={Logo} alt="logo" />
       </div>
 
       <div className="header_navLinks">
-        <ul>
-          <li>
+        <ul className="">
+          <li className="flex gap-8 ">
             {navLinks.map((link) => (
-              <Link key={link.id} to={link.url}>
+              <Link
+                className="hover:text-orange-400"
+                key={link.id}
+                to={link.url}
+              >
                 {link.title}
               </Link>
             ))}
