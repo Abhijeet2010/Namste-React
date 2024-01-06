@@ -1,4 +1,4 @@
-# Parcel (Bundler)
+<!-- # Parcel (Bundler)
 
 - Create Devlopment Build for us
 - Create Local Server ("localhost":1234)
@@ -35,8 +35,8 @@
 - if we console.log(props) then we get an Object.
 - when we want pass dynamic data to component it is pass as props.
 - React takes a Props as argument and Wrap it as a object and pass to component.
-- e.g of props = <Header name="Abhijeet" email="abhijeet@gmail.com" password="123456789"/>
-- (props) => {props.name, props.email, props.password} OR ({name, email, password}) ways to write props.
+- e.g of props = `<Header name="Abhijeet" email="abhijeet@gmail.com" password="123456789"/>`
+- `(props) => {props.name, props.email, props.password} OR ({name, email, password})` ways to write props.
 
 # config driven UI -
 
@@ -64,7 +64,7 @@
 - It not a normal js variable, it has superpower of local react state variable.
 - It Sync with UI layer and Data layer.
 - when ever data changes the ui will automatically changes with the help useState Hook.
-- const [data, setData] = useState(value); ----syntax
+- `const [data, setData] = useState(value);` ----syntax
 - because of useState hook virtual dom can track of the differernce between current state and previous state woth help of setterFunction.
 - if we use normal js variable then react can not keep track of that variable, so data will update but ui will not change..
 - useState has local state variable which is only update by setter function which will react can track..and it will help react to update state or data.
@@ -105,16 +105,16 @@
 4. on sucessfull api call response it will render the data on webpage.
 5. It gives better ux.
 6. Here React Render 2 times, but its not issue because its render cycle is superfast.
-   1. When 1st time page loads.
-   2. On API call or state changes or data changes.
+7. When 1st time page loads.
+8. On API call or state changes or data changes.
 
 # useEffect Hook
 
 - useEffect Hook is just a normal javascript function.
 - It takes 2 arguments ->
-  1. callback function ()=>{},
+  1. callback function `()=>{},`
   2. dependency array []
-- syntax -> useEffect(()=>{},[])
+- syntax -> `useEffect(()=>{},[])`
 
 - when component renders after that useEffect called.
 - if dependancy array is empty [] then useEffect is called on 1st render component. then it not called.
@@ -136,3 +136,22 @@
 2. Server Side Routing
 
 - It do Network call from Server. when user want index.html it make network call and get that page from server and show it on webpage.
+
+# Lazy Loading (...code splitting, chunking, lazy load)
+
+- lazy is a function that allow dynamically import a component.
+- When working with larger applications, loading all components at once might slow down the initial load time. lazy allows you to split your code into smaller chunks and load components only when they are needed, reducing the initial bundle size and improving performance.
+
+- Syntax
+
+- - `const Component = lazy(() => import('./Component'));`
+
+- Here, SomeComponent will be loaded asynchronously when it's needed.
+
+- suspense - to lazy load component we have to use Suspense component over there. it is also provided by react
+
+- - `<Suspense fallback={<h2>Loading...</h2>}>
+  <Component />
+</Suspense>`
+
+- - SomeComponent is still loading, the `Suspense` component will display <div>Loading...</div> until the component is fully loaded and ready to be rendered. -->

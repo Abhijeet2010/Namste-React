@@ -11,6 +11,12 @@ const CardContainer = () => {
   const [searchtext, setSearchText] = useState("");
   const [filter, setFilter] = useState([]);
 
+  {
+    // HOC
+    /* 
+     const UpdatedCardComp = newNameCompo(Card);
+     */
+  }
   const fetchData = async () => {
     setLoading(true);
     const API_URL =
@@ -20,11 +26,11 @@ const CardContainer = () => {
       const jsonData = await response.json();
 
       setListedData(
-        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setFilter(
-        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setLoading(false);
@@ -54,7 +60,7 @@ const CardContainer = () => {
           .join(" ")
           .toLowerCase()
           .includes(searchtext.toLowerCase()) ||
-        res.info.locality.toLowerCase().includes(searchtext.toLowerCase())
+        res.info.locality.includes(searchtext.toLowerCase())
     );
     setFilter(searchFilterData);
   };
@@ -75,7 +81,9 @@ const CardContainer = () => {
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 w-[90%] mx-auto">
         {loading ? (
-          <Shimmer count={20} />
+          <>
+            <Shimmer count={30} />
+          </>
         ) : (
           filter?.map((resData) => {
             return (
@@ -91,3 +99,16 @@ const CardContainer = () => {
 };
 
 export default CardContainer;
+
+// HOC (Higher Order Component)=>>>>
+
+// const newNameCompo = (CardComp) => {
+//   return (props) => {
+//     return (
+//       <>
+//         <h2>Abhijeet</h2>
+//         <CardComp {...props} />
+//       </>
+//     );
+//   };
+// };

@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Logo from "../../public/swiggy.webp";
 import { Link } from "react-router-dom";
+import { AppContext } from "../utils/userContext";
 
 const Header = () => {
   const [toggleLogin, setToggleLogin] = useState(true);
+
+  // learn useContext Hook
+  const { name, setName } = useContext(AppContext);
+
+  const handleClick = () => {
+    setToggleLogin((prev) => !prev);
+
+    // learn previous state in useState
+    setName((prev) => (prev === "Abhijeet" ? "Omkar" : "Abhijeet"));
+  };
+
   const navLinks = [
     {
       id: 1,
@@ -17,16 +29,11 @@ const Header = () => {
     },
     {
       id: 3,
-      url: "/offers",
-      title: "Offers  ",
-    },
-    {
-      id: 4,
       url: "/help",
       title: "Help",
     },
     {
-      id: 5,
+      id: 4,
       url: "/cart",
       title: "Cart",
     },
@@ -50,9 +57,10 @@ const Header = () => {
               </Link>
             ))}
 
-            <Link onClick={() => setToggleLogin((prev) => !prev)}>
+            <Link onClick={handleClick}>
               {toggleLogin ? "Login" : "Register"}
             </Link>
+            <Link>{name}</Link>
           </li>
         </ul>
       </div>
