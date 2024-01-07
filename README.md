@@ -1,4 +1,4 @@
-<!-- # Parcel (Bundler)
+# Parcel (Bundler)
 
 - Create Devlopment Build for us
 - Create Local Server ("localhost":1234)
@@ -154,4 +154,13 @@
   <Component />
 </Suspense>`
 
-- - SomeComponent is still loading, the `Suspense` component will display <div>Loading...</div> until the component is fully loaded and ready to be rendered. -->
+- - SomeComponent is still loading, the `Suspense` component will display <div>Loading...</div> until the component is fully loaded and ready to be rendered.
+
+# context API// learn How to create Context
+
+1.  It is like an Global Store where we put only that which is require in most of every component
+2.  It save us from becoming Prop-drilling.
+3.  It is created by using createContext Hook.
+4.  To get access context data we use useContext Hook.
+5.  Right now it is an advance way of passing data to all over the components or children.
+6.  we have wrap this context with main top level Parent component so then it will easily access by any component.
