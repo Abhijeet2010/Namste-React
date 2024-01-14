@@ -2,18 +2,20 @@ import { useContext, useState } from "react";
 import Logo from "../../public/swiggy.webp";
 import { Link } from "react-router-dom";
 import { AppContext } from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [toggleLogin, setToggleLogin] = useState(true);
+  const data = useSelector((state) => state.cart.items);
+  // console.log(data);
 
   // learn useContext Hook
   const { name, setName } = useContext(AppContext);
 
   const handleClick = () => {
     setToggleLogin((prev) => !prev);
-
     // learn previous state in useState
-    setName((prev) => (prev === "Abhijeet" ? "Omkar" : "Abhijeet"));
+    setName((prev) => (prev === "No-User" ? "Abhijeet" : "No-User"));
   };
 
   const navLinks = [
@@ -53,11 +55,16 @@ const Header = () => {
                 key={link.id}
                 to={link.url}
               >
-                {link.title}
+                {link.title === "Cart"
+                  ? "cart" + " >   " + data.length
+                  : link.title}
               </Link>
             ))}
 
-            <Link onClick={handleClick}>
+            <Link
+              className="px-4 border-[1px] border-black"
+              onClick={handleClick}
+            >
               {toggleLogin ? "Login" : "Register"}
             </Link>
             <Link>{name}</Link>

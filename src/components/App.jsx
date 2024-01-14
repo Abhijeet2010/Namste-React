@@ -4,6 +4,8 @@ import "../../public/style.css";
 // import BodyContainer from "./BodyContainer";
 import { Outlet } from "react-router-dom";
 import { AppProvider } from "../utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "../utils/store/store";
 
 {
   /* 
@@ -29,12 +31,14 @@ import { AppProvider } from "../utils/userContext";
 
 const App = () => {
   return (
-    <div className="app">
-      <AppProvider>
-        <Header />
-        <Outlet />
-      </AppProvider>
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <AppProvider>
+          <Header />
+          <Outlet />
+        </AppProvider>
+      </div>
+    </Provider>
   );
 };
 

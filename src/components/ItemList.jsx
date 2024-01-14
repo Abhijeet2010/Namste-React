@@ -1,6 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/slices/cartSlice";
 
 const ItemList = ({ data }) => {
+  const dispatch = useDispatch();
+
+  const handleclick = (data) => {
+    dispatch(addItem(data));
+  };
   return (
     <>
       {data?.map((a) => {
@@ -42,7 +49,10 @@ const ItemList = ({ data }) => {
                   src={IMG_URL + a.card.info.imageId}
                   alt="Menu-Items"
                 />
-                <span className="absolute bottom-5 bg-white px-4 rounded-md">
+                <span
+                  className="absolute bottom-5 bg-white px-4 rounded-md"
+                  onClick={() => handleclick(a)}
+                >
                   Add+
                 </span>
               </div>

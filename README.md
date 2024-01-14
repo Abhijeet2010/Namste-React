@@ -164,3 +164,18 @@
 4.  To get access context data we use useContext Hook.
 5.  Right now it is an advance way of passing data to all over the components or children.
 6.  we have wrap this context with main top level Parent component so then it will easily access by any component.
+
+# Redux
+
+1. React and Redux both are different.
+2. Redux uses for managing big state or data in centralized store.
+3. To simplify react state management we use redux, mostl-y in big project we have use redux.
+4. it dosent make any sense to use in small project.
+5. Redux is like a big Javascript object, which contains lots of data, and it it placed in global centralized place.
+6. Any component in our application can access the redux store, - they can performe crud operation as well.
+
+# Redux - IMP
+
+- `When we click on Btn ====>> it dispatch an action ====>> which calls a reducer function ====>> which update the slice of redux store.`
+
+- it is subscribe to redux store using selector or useSelector hook. it means it shows the real time data on UI when ever it change..because it sync with store.

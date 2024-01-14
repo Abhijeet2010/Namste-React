@@ -11,7 +11,7 @@ import { createContext, useState } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [name, setName] = useState("Abhijeet");
+  const [name, setName] = useState("No-User");
   return (
     <AppContext.Provider value={{ name, setName }}>
       {children}

@@ -5,11 +5,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import About from "./pages/About";
 import BodyContainer from "./components/BodyContainer";
 import Error from "./pages/Error";
+import Cart from "./pages/Cart";
 
 // import SingleRestraurant from "./pages/SingleRestraurant";
 
 const SingleRestraurant = lazy(() => import("./pages/SingleRestraurant"));
 const About = lazy(() => import("./pages/About"));
+const Cart = lazy(() => import("./pages/Cart"));
 
 const Approuter = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const Approuter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>Loading....</h1>}>
             <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <Cart />
           </Suspense>
         ),
       },

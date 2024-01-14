@@ -43,6 +43,7 @@ const SingleRestaurant = () => {
       {loading ? (
         <Shimmer />
       ) : (
+        // "hello"
         <>
           {/* predata will show restraurant name and locality */}
           <div className="w-7/12 text-center mx-auto p-3 leading-10">

@@ -26,11 +26,11 @@ const CardContainer = () => {
       const jsonData = await response.json();
 
       setListedData(
-        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setFilter(
-        jsonData.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+        jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
       );
 
       setLoading(false);
